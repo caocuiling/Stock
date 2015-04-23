@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+    <title>插件配置页面</title>
+    <link href="styles/options.css" rel="stylesheet" type="text/css" />
+    <link href="styles/jquery.autocomplete.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" src="js/libs/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript" src="js/libs/autoresize.js"></script>
+    <script type="text/javascript" src="js/libs/settings.js"></script>
+    <script type="text/javascript" src="js/libs/jquery.tablednd_0_5.js"></script>
+    <script type="text/javascript" src="js/stockInfo.js"></script>
+    <script type="text/javascript" src="js/stock.js"></script>
+    <script type="text/javascript" src="js/options.js"></script> 
+</head>
+<body>
+    <div id="message" class="message">保存成功</div>
+    <div id="tabMenu">
+        <ul class="menu">
+            <li><a href="#custom-broker" class="color">自定义券商</a></li>
+            <li><a href="#set-broker" class="color">配置券商</a></li>
+            <li><a href="#custom-stock-infos" class="color">自选股</a></li>
+            <li><a href="#basic-options" class="color">提醒设置</a></li>
+        </ul>
+    </div>
+    <div id="options">
+        <div id="set-broker">
+            <h4>配置券商</h4>
+            <table id="setBrokerTable" class="setBrokerTable">
+                <tr>
+                    <th>选择</th>
+                    <th>证券名称</th>
+                    <th>Web网址</th>
+                </tr>
+            </table>
+            <span>证券名</span><textarea id="brokername"></textarea></br>
+            <span>Web网址</span><textarea id="brokerweb"></textarea></br>
+            <button id="addBroker">添加</buttom>
+            <button id="removeBorker">删除</button>    
+        </div>
+        <div id="custom-stock-infos">
+            <h4>自选股信息</h4>
+            <table id="stocksTable" class="stocksTable">
+                <tr>
+                    <th width="14px"></th>
+                    <th width="26px">标记</th>
+                    <th width="75px">股票名称</th>
+                    <th width="75px">股票代码</th>
+                    <th width="66px">涨跌幅</th>
+                    <th width="63px">当前价</th>
+                    <th width="50px">涨跌价</th>
+                    <th width="63px">今开价</th>
+                    <th width="63px">昨收价</th>
+                    <th width="63px">最高价</th>
+                    <th width="63px">最低价</th>
+                    <th width="63px">上破价</th>
+                    <th width="63px">下破价</th>
+                    <th width="56px">操作</th>
+                </tr>
+                <tr class="templateRow">
+                    <td class="dragHandle" title="拖动"> </td>
+                    <td><div class="flag" title="标记股票"></div></td>
+                    <td><div style="cursor: pointer; position: relative;" title="点击修改"><span class="stockName"></span><input id="stockName" type="text"></div></td>
+                    <td><div><span class="stockCode" style="cursor: pointer;" title="点击进入新浪财经行"></span></div></td>
+                    <td><div><span class="stockChangeRate"></span></div></td>
+                    <td><div><span class="stockPrice"></span></div></td>
+                    <td><div><span class="stockChangeAmt"></span></div></td>
+                    <td><div><span class="stockOpenPrice"></span></div></td>
+                    <td><div><span class="stockClosePrice"></span></div></td>
+                    <td><div><span class="stockMaxPrice"></span></div></td>
+                    <td><div><span class="stockMinPrice"></span></div></td>
+                    <td><div style="cursor: pointer;" title="点击修改"><span class="stockUpPrice">0.00</span><input id="stockUpPrice" type="text" value="0.00"></div></td>
+                    <td><div style="cursor: pointer;" title="点击修改"><span class="stockDownPrice">0.00</span><input id="stockDownPrice" type="text" value="0.00"></div></td>
+                    <td>
+                        <div class="note" title="备注"><br/></div>
+                        <div class="delete" title="删除股票"><br/></div>
+                    </td>
+                </tr>
+            </table>
+            <div id="custom-stock-control" class="custom-stock-control">
+                <button id="btnNewStock">添加</button>
+                <button id="btnLoadStock">&nbsp;刷新&nbsp;</button>
+                <button id="btnSaveStock" style="float:right">&nbsp;保存信息&nbsp;</button>
+            </div>
+            <div id="div-stock-note" class="stockNote">
+                <div id="noteTitle" class="stockNoteTitle" tag="">股票备注:</div>
+                <textarea id="txtStockNote" wrap="soft" class="note-textarea"></textarea>
+            </div>
+            <div id="stock-note-control" class="stock-note-control">
+                <button id="btnBackOptions">返回自选股</button>
+                <button id="btnSaveNote" style="float:right">保存备注</button>
+            </div>
+        </div>
+        <div id="basic-options">
+            <p class="groovedouble">
+                <table border="1" cellpadding="0" cellspacing="0" bordercolor="#D9D9D9">
+                    <tr>
+                        <td class="onecenter">
+                            <div class="alertRow"><input type="checkbox" id="displayAlertInput" name="displayAlert"/> 达到预警设置时，显示提示信息窗口</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="onecenter">
+                            <div class="alertRow"><input type="checkbox" id="soundAlertInput" name="soundAlert"/> 达到预警设置时，播放提示音</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="onecenter">
+                            <div class="alertRow"><input type="checkbox" id="animateAlertInput" name="animateAlert"/> 达到预警设置时，图标动态变化</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="onecenter">
+                            <div class="alertRow"><input type="checkbox" id="showPriceInput" name="showPrice"/> 实时显示股价</div>
+                        </td>
+                    </tr>
+                </table>
+                <button id="options-ok">确定</botton> 
+            </p>
+        </div>
+</body>
+</html>

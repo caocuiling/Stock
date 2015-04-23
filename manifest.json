@@ -1,0 +1,25 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "images/icon_19.png",
+      "default_popup": "popup.html",
+      "default_title": ""
+   },
+   "description": "显示股票信息。可以根据设置的股票价格，进行提醒。",
+   "icons": {
+      "128": "images/icon.png",
+      "16": "images/icon_16.png",
+      "32": "images/icon_32.png",
+      "48": "images/icon_48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD2DK9Fn4ochoIen1BzcNSL5VeGkZge0SD0Uk1Pnb7ygSyzic1ZNBEHMsKjc3TrjMSGUrxV0+kLlBzDgsd1I0bKPvq0tYbqrZ+nFmsYLmhXFub4FdE1pHAnzBbVbaQlj9nyObO298lasgwlLulnVTgKET1lzAagE1IlcEkakTYSnwIDAQAB",
+   "manifest_version": 2,
+   "name": "股票提醒助手",
+   "optional_permissions": [ "background", "*://*/*" ],
+   "options_page": "options.html",
+   "permissions": [ "tts", "idle", "notifications", "tabs", "http://*/", "https://*/" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "3.7.6"
+}
