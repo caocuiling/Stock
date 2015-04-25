@@ -10,14 +10,15 @@
     <script type="text/javascript" src="js/libs/jquery.tablednd_0_5.js"></script>
     <script type="text/javascript" src="js/stockInfo.js"></script>
     <script type="text/javascript" src="js/stock.js"></script>
-    <script type="text/javascript" src="js/options.js"></script> 
+    <script type="text/javascript" src="js/options.js"></script>
+    <script type="text/javascript" src="js/broker.js"></script> 
 </head>
 <body>
     <div id="message" class="message">保存成功</div>
     <div id="tabMenu">
         <ul class="menu">
             <li><a href="#custom-broker" class="color">自定义券商</a></li>
-            <li><a href="#set-broker" class="color">配置券商</a></li>
+            <li id="broker"><a href="#set-broker" class="color">配置券商</a></li>
             <li><a href="#custom-stock-infos" class="color">自选股</a></li>
             <li><a href="#basic-options" class="color">提醒设置</a></li>
         </ul>
@@ -31,10 +32,17 @@
                     <th>证券名称:</th>
                     <th>Web网址:</th>
                 </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"></input>
+                    </td>
+                    <td>曹翠玲</td>
+                    <td>曹翠玲2</td>
+                </tr>
             </table>
             <span>证券名</span><textarea id="brokername"></textarea></br>
             <span>Web网址</span><textarea id="brokerweb"></textarea></br>
-            <button id="addBroker">添加</buttom>
+            <button id="addBroker">添加</button>
             <button id="removeBorker">删除</button>    
         </div>
         <div id="custom-stock-infos">

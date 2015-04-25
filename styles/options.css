@@ -186,9 +186,16 @@ table.setBrokerTable th{
 	white-space:nowrap;
 }
 table.setBrokerTable td{
-	border-bottom:solid 1px #e8e8e8;
+	border-bottom:solid 1px #d7dbe0;
+	border-top:solid 1px #e2e7e9;
+	border-left: solid 1px #e2e7e9;
+	border-right: solid 1px #e2e7e9;
+	font-size:12px;
+	font-weight:normal;
+	height:29px;
 	overflow:hidden;
-	padding:1px;
+	padding-left:6px;
+	text-align:left;
 	white-space:nowrap;
 }
 
