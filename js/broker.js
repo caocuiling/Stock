@@ -6,6 +6,7 @@ $(function() {
   //点击配置商券时就出发更新商券的事件
    function newUpdate(index,newBrokername,newBrokerweb){
    	localStorage['newBroker_'+index]=JSON.stringify({
+      
    		'newBrokername':encodeURIComponent($.trim(newBrokername)),
    		'newBrokerweb':encodeURIComponent($.trim(newBrokername))
    	});
@@ -13,7 +14,7 @@ $(function() {
    
 //每次添加之后重新输出所有的
     function newoutputBroker(){
-    	$('table').empty();
+    	$('#setBrokerTable').empty();
     	var broker='';
     	broker='<tr><th>选择</th><th>证券名称</th><th>web网址</th></tr>';
     	//alert(broker);
@@ -27,7 +28,7 @@ $(function() {
     		//alert(data);
     	}
     	//alert(broker);
-    	$('table').append(broker);
+    	$('#setBrokerTable').append(broker);
     }
 	/** 新任务热键  */
   $("#broker").click(function(){
