@@ -17,13 +17,24 @@
     <div id="message" class="message">保存成功</div>
     <div id="tabMenu">
         <ul class="menu">
-            <li><a href="#custom-broker" class="color">自定义券商</a></li>
+            <li id="custom"><a href="#custom-broker" class="color">自定义券商</a></li>
             <li id="broker"><a href="#set-broker" class="color">配置券商</a></li>
             <li><a href="#custom-stock-infos" class="color">自选股</a></li>
             <li><a href="#basic-options" class="color">提醒设置</a></li>
         </ul>
     </div>
     <div id="options">
+        <div id="custom-broker">
+            <h4>自定义商券</h4>
+            <table id="customBrokerTable" class="setBrokerTable">
+                <tr>
+                    <th>选择</th>
+                    <th>证券名称</th>
+                    <th>Web网址</th>
+                </tr>
+            </table>
+            <button id="enSure">确定</button>
+        </div>
         <div id="set-broker">
             <h4>配置券商</h4>
             <table id="setBrokerTable" class="setBrokerTable">
