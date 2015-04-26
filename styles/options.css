@@ -141,16 +141,16 @@ button, input[type=button], input[type=submit], a.button {
 /*******************************************/
 .groovedouble{
 	border-style: ridge;
-	margin-left: 0.5cm;
-	margin-top: 0.5cm;
-	padding: 9px 10px 5px 10px;
+	margin-left: 1cm;
+	margin-top: 1cm;
+	padding: 15px 20px 15px 20px;
 	width: 305px;
 }
 .onecenter{
 	text-align: center;
 	width: 300px;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 .alertRow {
 	margin: 0;
@@ -253,13 +253,11 @@ table.stocksTable .tableRow.stockDown.myDragClass {
     background: #005500;
     color: #fff;
 }
-table.stocksTable .tableRow.stockStop:hover div.flag,
+
 table.stocksTable .tableRow.stockStop:hover div.note,
 table.stocksTable .tableRow.stockStop:hover div.delete,
-table.stocksTable .tableRow.stockUp:hover div.flag,
 table.stocksTable .tableRow.stockUp:hover div.note,
 table.stocksTable .tableRow.stockUp:hover div.delete,
-table.stocksTable .tableRow.stockDown:hover div.flag,
 table.stocksTable .tableRow.stockDown:hover div.note,
 table.stocksTable .tableRow.stockDown:hover div.delete {
 	background-position:0 -52px;
@@ -362,33 +360,6 @@ table.stocksTable div.delete.pressed {
 	opacity: 1;
 	background-position:0 -26px;
 }
-table.stocksTable div.flag {
-	height:26px;
-	width:26px;
-	float:left;
-	text-indent:-9000px;
-	font-size:1px;
-	display:block;
-	background:url("/images/flag.png") 0 0;
-	cursor:pointer;
-	opacity: 0.1;
-}
-table.stocksTable div.flag.add {
-	background-position:0 0;
-	opacity: 0.5;
-}
-table.stocksTable div.flag.add:hover {
-	background-position:0 -52px;
-	opacity: 1 !important;
-}
-table.stocksTable div.flag.remove {
-	background-position:0 -26px;
-	opacity: 1;
-}
-table.stocksTable div.flag.remove:hover {
-	background-position:0 -52px;
-	opacity: 1 !important;
-}
 
 table.stocksTable .templateRow {
 	display:none;
@@ -417,7 +388,7 @@ table.stocksTable .templateRow {
     margin-bottom: 10px;
 }
 
-/*    
+   
 textarea.note-textarea {
 	margin: 0;
 	-webkit-box-shadow: #E7E7E7 1px 1px 0px;
@@ -466,4 +437,4 @@ textarea.backup-textarea {
 .backup-control button {
     margin: 0 0 8px 0;
     float: left;
-}*/
+}

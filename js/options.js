@@ -50,7 +50,7 @@ function saveStockNote() {
 	
 	Settings.setValue("note_" + stockCode, $("textarea#txtStockNote").val());
 	
-	showMessage("保存备注成功");
+	showMessage("备注保存成功");
 }
 
 var hideMessageTime = -1;
@@ -79,27 +79,6 @@ function eraseMessage() {
 		$("#message").animate({ 'top': '-34' }, 200);
 	}
 }
-function optionok(){
-	$('.alertRow input[type=checkbox]').change(function(e) {
-        var name = e.target.name;
-        
-        if (name == "displayAlert" && e.target.checked == true) {
-        	if ( isWebkitHTMLNotificationsEnabled() ) {
-	        	if(webkitNotifications.checkPermission() != 0) {
-					webkitNotifications.requestPermission(function() {
-						if(webkitNotifications.checkPermission() != 0) {
-							e.target.checked = false;
-						}
-					});
-				}
-			}
-        }
-        backgroundPage.Settings.setValue(name, e.target.checked);
-        backgroundPage.displayStocks();
-        
-        showMessage("保存成功");
-    });
-}
 function init() {
 	initializeTabs();
 	
@@ -125,20 +104,26 @@ function init() {
 		$("#animateAlertInput").attr("checked", "checked");
 	}
 	
-	if(backgroundPage.Settings.getValue("showPrice", true)) {
-		$("#showPriceInput").attr("checked", "checked");
-	}
+	$('.alertRow input[type=checkbox]').change(function(e) {
+        var name = e.target.name;
+        
+        if (name == "displayAlert" && e.target.checked == true) {
+        	if ( isWebkitHTMLNotificationsEnabled() ) {
+	        	if(webkitNotifications.checkPermission() != 0) {
+					webkitNotifications.requestPermission(function() {
+						if(webkitNotifications.checkPermission() != 0) {
+							e.target.checked = false;
+						}
+					});
+				}
+			}
+        }
+        backgroundPage.Settings.setValue(name, e.target.checked);
+        backgroundPage.displayStocks();
+        
+        showMessage("保存成功");
+    });
 
-	//if(backgroundPage.Settings.getValue("showPicture", true)) {
-		//$("#showStockPicture").attr("checked", "checked");
-	//}
-	
-	//if(backgroundPage.Settings.getValue("showSinaLink", false)) {
-		//$("#showSinaLinkInput").attr("checked", "checked");
-	//}
-
-	
-	
 	$("textarea#txtStockNote").autoResize({
 		defaultHeight: 88,
 		animate: false,
@@ -152,9 +137,6 @@ function init() {
 	$("#btnSaveStock").click(function() { saveOptions(); });
 	$("#btnBackOptions").click(function() { backOptionsPage(); });
 	$("#btnSaveNote").click(function() { saveStockNote(); });
-	$("#options-ok").click(function() { optionok(); });
-	//$("#btnExportStock").click(function() { exportStock(); });
-	//$("#btnImportStock").click(function() { importStock(); });
 	
 	$("#stocksTable").delegate(".note", "click", function(){ showStockNote(); });
 	$("#stocksTable").delegate(".delete", "click", function(){ deleteStockRow(); });
@@ -477,45 +459,3 @@ function deleteStockRow() {
 	else
 		$(event.target).removeClass("pressed");
 }
-/*
-function exportStock() {
-	var stockListStocks = Settings.getObject("stockListStocks");
-	var strStockInfo = JSON.stringify(stockListStocks);
-	strStockInfo = strStockInfo.replace(/},/g, "},\r\n");
-	
-	var textarea = $("#txtBackup");
-	textarea.val(strStockInfo);
-	textarea.focus();
-	textarea.select();
-	
-	showMessage("导出数据成功，请保存");
-}
-
-function importStock() {	
-	var json = $("#txtBackup").val();
-    if (json && json != "")
-    {
-        try {
-			stockInfos = JSON.parse(json);
-	
-			if (undefined != stockInfos) {
-				Settings.setObject("stockListStocks", stockInfos);
-				
-				Settings.setValue("popupStockPosition", 0);
-				
-				backgroundPage.reloadSock = true;
-				backgroundPage.refreshStocks();
-				
-				initializeStockRow();
-				
-				saveOptions();
-				
-				showMessage("导入成功");
-			}
-        }
-        catch(e) {
-			console.log(e);
-			showMessage("导入失败，请重试");
-		}
-    }
-}*/
