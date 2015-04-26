@@ -107,7 +107,7 @@ $(function() {
     localStorage['enBorker']=JSON.stringify(arr);
     alert('添加完成');
     //测试
-    /*
+    /*测试
     var arr1=$.parseJSON(localStorage['enBorker']);
     for(var i=0;i<arr1.length;i++){
       var data=arr1[i];
