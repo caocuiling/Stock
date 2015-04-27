@@ -25,7 +25,8 @@ function isWebkitHTMLNotificationsEnabled() {
 
 function openStockPage(stockCode) {
 	console.log('ffff');
-	chrome.tabs.create({url: "http://finance.sina.com.cn/realstock/company/" + stockCode + "/nc.shtml", selected: false});
+	//chrome.tabs.create({url: "http://finance.sina.com.cn/realstock/company/" + stockCode + "/nc.shtml", selected: false});
+	chrome.tabs.create({url: "http://finance.sina.com.cn/flash/cn.swf?symbol=" + stockCode, selected: false});
 }
 
 function openSinaStock() {

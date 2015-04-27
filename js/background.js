@@ -12,7 +12,7 @@ var firstAnimate = true;
 function initAnimate()
 {
 	iconSrc = "images/icon_19.png";
-	
+
 	canvas = document.getElementById("canvas");
 	canvasContext = canvas.getContext("2d");
 	gfx = document.getElementById("gfx");
@@ -29,14 +29,14 @@ function startAnimate() {
 		stopAnimateLoop();
 		
 		if ( isOperation() || firstAnimate ) {
-			animTimer = setInterval("doAnimate()", 200);
-			setTimeout("stopAnimate()", 2000);
-			loopTimer = setTimeout("startAnimate()", 8000);
+			animTimer = setInterval(doAnimate, 200);
+			setTimeout(stopAnimate, 2000);
+			loopTimer = setTimeout(startAnimate, 3000);
 			
 			firstAnimate = false;
 		}
 		else {
-			loopTimer = setTimeout("startAnimate()", 60000);
+			loopTimer = setTimeout(startAnimate, 60000);
 		}
 	}
 }

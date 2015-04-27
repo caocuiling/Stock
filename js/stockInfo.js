@@ -1,4 +1,5 @@
-var stockInfos = [
+
+var stockInfos1 = [
 	{ pyname: "szzs", name: "上证指数", code: "sh000001" },
 	{ pyname: "szcz", name: "深证成指", code: "sz399001" },
 	{ pyname: "jjjt", name: "基金金泰", code: "sh500001" },

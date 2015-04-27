@@ -1,3 +1,4 @@
+
 var stockInfo = undefined;
 
 $(function(){
