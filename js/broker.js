@@ -119,6 +119,12 @@ $(function() {
   });
   //页面加载时就更新自定义商券和配置商券
   $(document).ready(function(){
+    //初始化本地存储
+    var arr=new Array();
+    arr=$.parseJSON(localStorage['newBroker']);
+    if(!arr.length){
+      localStorage['newBroker']=JSON.stringify(arr);
+    }
     customBroker();
     newoutputBroker();
   });
