@@ -121,8 +121,10 @@ $(function() {
   $(document).ready(function(){
     //初始化本地存储
     var arr=new Array();
-    arr=$.parseJSON(localStorage['newBroker']);
-    if(!arr.length){
+   // alert(arr.length);
+    var arr=$.parseJSON(localStorage['newBroker']);
+    if(!arr){
+     var arr=new Array();
       localStorage['newBroker']=JSON.stringify(arr);
     }
     customBroker();
